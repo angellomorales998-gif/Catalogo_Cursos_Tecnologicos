@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo interactivo de cursos tecnológicos del Centro de Formación Tecnológica.">
+  <title>Catálogo de cursos | Centro de Formación Tecnológica</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="encabezado" id="inicio">
+    <div class="barra-superior contenedor">
+      <a class="marca" href="#inicio" aria-label="Centro de Formación Tecnológica, inicio">
+        <span class="marca-icono" aria-hidden="true">CF</span>
+        <span class="marca-texto">CENTRO DE FORMACIÓN <strong>TECNOLÓGICA</strong></span>
+      </a>
+      <nav class="menu" aria-label="Navegación principal">
+        <a class="enlace-menu activo" href="#inicio">Inicio</a>
+        <a class="enlace-menu" href="#catalogo">Cursos</a>
+        <a class="enlace-menu" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="hero contenedor">
+      <div class="hero-contenido">
+        <span class="etiqueta">APRENDE · PRACTICA · CREA</span>
+        <h1>Tu próximo paso<br><span>comienza aquí.</span></h1>
+        <p>Explora cursos tecnológicos, encuentra el tema que te interesa y construye nuevas habilidades para el mundo digital.</p>
+        <a class="boton boton-claro" href="#catalogo">Explorar cursos <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-grafico" aria-hidden="true">
+        <div class="circulo circulo-grande"></div>
+        <div class="circulo circulo-pequeno"></div>
+        <div class="ventana-codigo">
+          <div class="ventana-puntos"><i></i><i></i><i></i></div>
+          <div class="codigo-linea linea-corta"></div>
+          <div class="codigo-linea linea-larga"></div>
+          <div class="codigo-linea linea-media"></div>
+          <div class="codigo-linea linea-final"></div>
+          <div class="codigo-etiqueta">&lt;/&gt;</div>
+        </div>
+        <div class="sello">IDEAS<br><strong>EN ACCIÓN</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion-catalogo contenedor" id="catalogo">
+      <div class="encabezado-seccion">
+        <div>
+          <span class="sobrelinea">NUESTRA OFERTA</span>
+          <h2>Cursos disponibles</h2>
+          <p class="texto-seccion">Conoce los fundamentos para diseñar y desarrollar experiencias web.</p>
+        </div>
+        <div class="contador-cursos" aria-live="polite"><strong id="cantidadCursos">3</strong><span> cursos</span></div>
+      </div>
+
+      <div class="barra-busqueda">
+        <label for="buscador">Buscar un curso</label>
+        <div class="campo-busqueda">
+          <span class="icono-busqueda" aria-hidden="true">⌕</span>
+          <input type="search" id="buscador" placeholder="Escribe el nombre del curso..." autocomplete="off">
+          <button type="button" id="limpiarBusqueda" class="limpiar-busqueda" aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>
+        </div>
+        <p class="ayuda-busqueda">La búsqueda se realiza por el nombre del curso.</p>
+      </div>
+
+      <div id="listaCursos" class="lista-cursos" aria-live="polite"></div>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="seccion-registro" id="registro">
+      <div class="contenedor registro-grid">
+        <div class="registro-intro">
+          <span class="sobrelinea sobrelinea-clara">AMPLÍA EL CATÁLOGO</span>
+          <h2>¿Tienes otro curso<br> para compartir?</h2>
+          <p>Agrega una nueva opción al catálogo. El curso aparecerá de inmediato y podrás eliminarlo cuando lo necesites.</p>
+          <div class="nota-temporal"><span aria-hidden="true">ⓘ</span> Los cursos agregados se guardan temporalmente mientras la página está abierta.</div>
+        </div>
+        <div class="panel-formulario">
+          <h3>Registrar un curso</h3>
+          <p class="subtitulo-formulario">Completa los campos para incorporarlo.</p>
+          <form id="formCurso" novalidate>
+            <div class="grupo-campo">
+              <label for="nombreCurso">Nombre del curso</label>
+              <input type="text" id="nombreCurso" name="nombreCurso" placeholder="Ej. Introducción a Python" minlength="3" maxlength="70" required>
+            </div>
+            <div class="grupo-campo">
+              <label for="descripcion">Descripción</label>
+              <textarea id="descripcion" name="descripcion" rows="4" placeholder="Describe brevemente lo que aprenderán los estudiantes..." minlength="10" maxlength="240" required></textarea>
+              <span class="contador-caracteres" id="contadorDescripcion">0 / 240</span>
+            </div>
+            <button class="boton boton-principal boton-agregar" type="submit"><span aria-hidden="true">＋</span> Agregar curso</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="pie-pagina">
+    <div class="contenedor pie-contenido">
+      <div>
+        <a class="marca marca-pie" href="#inicio"><span class="marca-icono" aria-hidden="true">CF</span><span class="marca-texto">CENTRO DE FORMACIÓN <strong>TECNOLÓGICA</strong></span></a>
+        <p>Formación para crear nuevas oportunidades.</p>
+      </div>
+      <div class="pie-contacto"><span class="sobrelinea sobrelinea-clara">CONTACTO</span><p>Consulta en el centro de formación la información sobre inscripciones y disponibilidad.</p></div>
+    </div>
+    <div class="contenedor pie-final"><span>Proyecto académico · Desarrollo Web I</span><span>Catálogo interactivo de cursos</span></div>
+  </footer>
+</body>
+</html>
